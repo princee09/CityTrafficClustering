@@ -1,0 +1,10 @@
+{
+  "n_states": 4,
+  "n_queue_bins": 10,
+  "n_actions": 5,
+  "lr": 0.1,
+  "gamma": 0.95,
+  "epsilon": 1.0,
+  "decay": 0.995,
+  "min_epsilon": 0.01
+}

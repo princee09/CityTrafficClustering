@@ -1,0 +1,5 @@
+cluster_id,traffic_state_name,Traffic Volume,Average Speed,Congestion Level,Road Capacity Utilization,Incident Reports,spawn_rate,sim_speed,incident_prob,count,share_%
+0,Free Flow,32187.22,38.43,88.92,98.41,1.8,25.5,38.4,0.9,818,9.15
+1,Normal,11192.36,44.97,37.17,55.85,0.53,8.9,45.0,0.26,1310,14.66
+2,Peak Congestion,20425.34,45.13,68.16,94.39,1.17,16.2,45.1,0.58,2155,24.12
+3,Incident / Disrupted,37877.84,35.44,97.55,100.0,2.01,30.0,35.4,1.0,4653,52.07

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Traffic Signal Control - Real-Time Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🚦</div>
+                    <div>
+                        <h1 class="title">Adaptive Traffic Control System</h1>
+                        <p class="subtitle">K-Means Clustering-Based Signal Optimization</p>
+                    </div>
+                </div>
+                <div class="header-status">
+                    <div class="status-badge" id="simulationStatus">
+                        <span class="status-dot"></span>
+                        <span>Ready</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            <!-- Left Panel: Controls -->
+            <aside class="control-panel">
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">⚙️</span>
+                        Simulation Controls
+                    </h3>
+                    <div class="control-group">
+                        <button id="start Btn" class="btn btn-primary">
+                            <span class="btn-icon">▶</span>
+                            Start Simulation
+                        </button>
+                        <button id="pauseBtn" class="btn btn-secondary" disabled>
+                            <span class="btn-icon">⏸</span>
+                            Pause
+                        </button>
+                        <button id="resetBtn" class="btn btn-outline">
+                            <span class="btn-icon">↻</span>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">🎛️</span>
+                        Traffic Parameters
+                    </h3>
+                    <div class="slider-control">
+                        <label for="trafficDensity">
+                            <span>Traffic Density</span>
+                            <span id="densityValue" class="value-label">Medium</span>
+                        </label>
+                        <input type="range" id="trafficDensity" min="1" max="5" value="3" step="1">
+                        <div class="slider-labels">
+                            <span>Low</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-control">
+                        <label for="simulationSpeed">
+                            <span>Simulation Speed</span>
+                            <span id="speedValue" class="value-label">1.0x</span>
+                        </label>
+                        <input type="range" id="simulationSpeed" min="0.5" max="3" value="1" step="0.5">
+                        <div class="slider-labels">
+                            <span>0.5x</span>
+                            <span>3.0x</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">🤖</span>
+                        Control Mode
+                    </h3>
+                    <div class="mode-toggle">
+                        <button id="adaptiveMode" class="mode-btn active">
+                            <span class="mode-icon">🧠</span>
+                            <span class="mode-label">Adaptive (ML)</span>
+                            <span class="mode-desc">K-Means Clustering</span>
+                        </button>
+                        <button id="fixedMode" class="mode-btn">
+                            <span class="mode-icon">⏱️</span>
+                            <span class="mode-label">Fixed-Time</span>
+                            <span class="mode-desc">Traditional Control</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">🎨</span>
+                        Traffic State
+                    </h3>
+                    <div id="currentState" class="traffic-state-display">
+                        <div class="state-badge" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                            <span class="state-name">Normal Flow</span>
+                            <span class="state-desc">Initializing...</span>
+                        </div>
+                        <div class="state-params">
+                            <div class="param-item">
+                                <span class="param-label">Green Time</span>
+                                <span class="param-value">30s</span>
+                            </div>
+                            <div class="param-item">
+                                <span class="param-label">Cycle Length</span>
+                                <span class="param-value">90s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Simulation Canvas -->
+            <main class="simulation-area">
+                <!-- Cluster Traffic Light Indicator -->
+                <div class="cluster-indicator-container">
+                    <div class="cluster-traffic-light">
+                        <div class="cluster-light-housing">
+                            <div class="cluster-light cluster-light-0" id="light0"></div>
+                            <div class="cluster-light cluster-light-1" id="light1"></div>
+                            <div class="cluster-light cluster-light-2" id="light2"></div>
+                            <div class="cluster-light cluster-light-3" id="light3"></div>
+                        </div>
+                        <div class="cluster-label">
+                            <div class="cluster-label-title">Model Classification</div>
+                            <div class="cluster-label-state" id="clusterLabelState">Normal Flow</div>
+                        </div>
+                    </div>
+                    <div class="cluster-info-badge">
+                        <span class="badge-icon">🧠</span>
+                        <span class="badge-text">K-Means in Action</span>
+                        <span class="badge-cluster" id="badgeCluster">Cluster 1</span>
+                    </div>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="trafficCanvas"></canvas>
+                    <div class="canvas-overlay">
+                        <div class="direction-labels">
+                            <div class="direction-label north">↑ North</div>
+                            <div class="direction-label south">↓ South</div>
+                            <div class="direction-label east">→ East</div>
+                            <div class="direction-label west">← West</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Panel: Metrics -->
+            <aside class="metrics-panel">
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">📊</span>
+                        Performance Metrics
+                    </h3>
+
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">⏱️</div>
+                        <div class="metric-content">
+                            <div class="metric-label">Avg Wait Time</div>
+                            <div class="metric-value" id="avgWaitTime">0.0s</div>
+                            <div class="metric-change positive" id="waitTimeChange">--</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📏</div>
+                        <div class="metric-content">
+                            <div class="metric-label">Max Queue Length</div>
+                            <div class="metric-value" id="maxQueue">0</div>
+                            <div class="metric-change" id="queueChange">vehicles</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #10b981, #059669);">🚗</div>
+                        <div class="metric-content">
+                            <div class="metric-label">Throughput</div>
+                            <div class="metric-value" id="throughput">0</div>
+                            <div class="metric-change" id="throughputChange">vehicles/min</div>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">🎯</div>
+                        <div class="metric-content">
+                            <div class="metric-label">Traffic Efficiency</div>
+                            <div class="metric-value" id="efficiency">0%</div>
+                            <div class="metric-change positive" id="efficiencyChange">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">📈</span>
+                        Lane Status
+                    </h3>
+
+                    <div class="lane-stats" id="laneStats">
+                        <div class="lane-stat-item">
+                            <div class="lane-label">
+                                <span class="lane-icon">↑</span>
+                                <span>North Lane</span>
+                            </div>
+                            <div class="lane-info">
+                                <span class="queue-count" data-lane="north">0</span>
+                                <div class="signal-indicator" data-signal="north"></div>
+                            </div>
+                        </div>
+                        <div class="lane-stat-item">
+                            <div class="lane-label">
+                                <span class="lane-icon">→</span>
+                                <span>East Lane</span>
+                            </div>
+                            <div class="lane-info">
+                                <span class="queue-count" data-lane="east">0</span>
+                                <div class="signal-indicator" data-signal="east"></div>
+                            </div>
+                        </div>
+                        <div class="lane-stat-item">
+                            <div class="lane-label">
+                                <span class="lane-icon">↓</span>
+                                <span>South Lane</span>
+                            </div>
+                            <div class="lane-info">
+                                <span class="queue-count" data-lane="south">0</span>
+                                <div class="signal-indicator" data-signal="south"></div>
+                            </div>
+                        </div>
+                        <div class="lane-stat-item">
+                            <div class="lane-label">
+                                <span class="lane-icon">←</span>
+                                <span>West Lane</span>
+                            </div>
+                            <div class="lane-info">
+                                <span class="queue-count" data-lane="west">0</span>
+                                <div class="signal-indicator" data-signal="west"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">🔬</span>
+                        K-Means Classification
+                    </h3>
+                    <div class="kmeans-explainer">
+                        <div class="explainer-header">
+                            <span class="explainer-label">How It Works:</span>
+                            <span class="explainer-desc">Measuring distance to each cluster centroid</span>
+                        </div>
+
+                        <!-- Current Traffic Features -->
+                        <div class="feature-display">
+                            <h4>Current Traffic Features:</h4>
+                            <div class="feature-bars">
+                                <div class="feature-bar">
+                                    <label>Vehicles: <span id="featureVehicles">0</span></label>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" id="barVehicles" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="feature-bar">
+                                    <label>Speed: <span id="featureSpeed">0</span> km/h</label>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" id="barSpeed" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="feature-bar">
+                                    <label>Congestion: <span id="featureCongestion">0</span>%</label>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" id="barCongestion" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cluster Distance Visualization -->
+                        <div class="cluster-distances">
+                            <h4>Distance to Each Cluster:</h4>
+                            <div class="distance-list" id="distanceList">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Classification Result -->
+                        <div class="classification-result">
+                            <div class="result-label">Classified As:</div>
+                            <div class="result-cluster" id="resultCluster">
+                                <span class="cluster-badge">Cluster 1</span>
+                                <span class="cluster-name">Normal Flow</span>
+                            </div>
+                            <div class="result-confidence">
+                                Confidence: <span id="confidenceValue">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <span class="icon">📍</span>
+                        Cluster Centroids
+                    </h3>
+                    <div class="cluster-centroids" id="clusterCentroids">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="clusterModel.js"></script>
+    <script src="trafficSignalController.js"></script>
+    <script src="simulation.js"></script>
+    <script src="visualization.js"></script>
+    <script src="metricsCollector.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

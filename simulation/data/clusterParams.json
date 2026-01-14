@@ -1,0 +1,547 @@
+{
+  "metadata": {
+    "description": "K-Means cluster parameters extracted from Bangalore traffic data",
+    "num_clusters": 4,
+    "num_features": 14,
+    "num_samples": 8936,
+    "silhouette_score": 0.2305
+  },
+  "clusters": [
+    {
+      "id": 0,
+      "centroid_scaled": [
+        0.22699415681541996,
+        -0.0950009018874203,
+        0.21310167624070372,
+        0.3443892640658113,
+        0.38500182817976614,
+        0.16135691140244218,
+        0.22699415681541962,
+        -0.38734279646904174,
+        0.017503686785403014,
+        2.884101181409725,
+        -0.4118658857606479,
+        -0.31935160601969287,
+        -0.2242890874170378,
+        -0.05630897497081589
+      ],
+      "features": {
+        "traffic_volume": {
+          "mean": 32187.21760391198,
+          "std": 10803.223968753646,
+          "min": 15083.0,
+          "max": 66888.0
+        },
+        "average_speed": {
+          "mean": 38.430286084995906,
+          "std": 10.485293728544542,
+          "min": 20.0,
+          "max": 74.85091995371862
+        },
+        "travel_time_index": {
+          "mean": 1.4107813799286508,
+          "std": 0.14840875369047954,
+          "min": 1.001966860028331,
+          "max": 1.5
+        },
+        "congestion_level": {
+          "mean": 88.92216236039879,
+          "std": 15.123111295052754,
+          "min": 44.01571302182268,
+          "max": 100.0
+        },
+        "road_capacity_utilization": {
+          "mean": 98.41347450044813,
+          "std": 4.709589105854779,
+          "min": 75.09310309633254,
+          "max": 100.0
+        },
+        "incident_reports": {
+          "mean": 1.7995110024449879,
+          "std": 1.456475770486223,
+          "min": 0.0,
+          "max": 7.0
+        },
+        "environmental_impact": {
+          "mean": 114.37443520782396,
+          "std": 21.606447937507287,
+          "min": 80.166,
+          "max": 183.776
+        },
+        "pedestrian_and_cyclist_count": {
+          "mean": 100.27506112469437,
+          "std": 10.077491142126467,
+          "min": 73.0,
+          "max": 133.0
+        },
+        "isweekend": {
+          "mean": 0.2946210268948655,
+          "std": 0.45615112233959676,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_fog": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "weather_conditions_overcast": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "weather_conditions_rain": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "weather_conditions_windy": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "roadwork_and_construction_activity_yes": {
+          "mean": 0.08190709046454768,
+          "std": 0.2743908908879727,
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "traffic_state": "Free Flow",
+      "description": "Moderate traffic with some capacity usage",
+      "color": "#10b981",
+      "sample_count": 818,
+      "percentage": 9.15398388540734
+    },
+    {
+      "id": 1,
+      "centroid_scaled": [
+        -1.387860549385157,
+        0.5154698540540393,
+        -1.055409261246961,
+        -1.855013132082206,
+        -2.1818375223650004,
+        -0.7301587298185094,
+        -1.387860549385157,
+        2.312385224154157,
+        0.012518058467031228,
+        -0.018712943634891337,
+        0.0216975808255775,
+        0.012547440359096438,
+        -0.013383419613013382,
+        0.022267826310155937
+      ],
+      "features": {
+        "traffic_volume": {
+          "mean": 11192.36030534351,
+          "std": 2651.0090437972462,
+          "min": 4233.0,
+          "max": 14996.0
+        },
+        "average_speed": {
+          "mean": 44.966379373395775,
+          "std": 10.013810401742154,
+          "min": 20.0,
+          "max": 80.23139882443289
+        },
+        "travel_time_index": {
+          "mean": 1.2010840522255921,
+          "std": 0.11507963224923146,
+          "min": 1.001674977451183,
+          "max": 1.3993979507871133
+        },
+        "congestion_level": {
+          "mean": 37.16612238097608,
+          "std": 10.665902431890247,
+          "min": 5.160279008043586,
+          "max": 59.275225888315695
+        },
+        "road_capacity_utilization": {
+          "mean": 55.8490843591955,
+          "std": 13.53442505694676,
+          "min": 18.73977149973116,
+          "max": 79.44472754707598
+        },
+        "incident_reports": {
+          "mean": 0.533587786259542,
+          "std": 0.7344112755282669,
+          "min": 0.0,
+          "max": 4.0
+        },
+        "environmental_impact": {
+          "mean": 72.38472061068703,
+          "std": 5.302018087594492,
+          "min": 58.466,
+          "max": 79.992
+        },
+        "pedestrian_and_cyclist_count": {
+          "mean": 199.65343511450382,
+          "std": 13.642400637088967,
+          "min": 154.0,
+          "max": 243.0
+        },
+        "isweekend": {
+          "mean": 0.29236641221374043,
+          "std": 0.4550234541945932,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_fog": {
+          "mean": 0.10152671755725191,
+          "std": 0.30214024762045666,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_overcast": {
+          "mean": 0.15267175572519084,
+          "std": 0.35980816641583857,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_rain": {
+          "mean": 0.09618320610687023,
+          "std": 0.29495492531626366,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_windy": {
+          "mean": 0.0450381679389313,
+          "std": 0.20746707764190808,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "roadwork_and_construction_activity_yes": {
+          "mean": 0.10534351145038168,
+          "std": 0.30711277198026976,
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "traffic_state": "Normal",
+      "description": "Low traffic volume with good speeds",
+      "color": "#3b82f6",
+      "sample_count": 1310,
+      "percentage": 14.659803043867504
+    },
+    {
+      "id": 2,
+      "centroid_scaled": [
+        -0.6776900434147207,
+        0.5304216464963595,
+        -1.057640463895207,
+        -0.5379290690647891,
+        0.14231345552531222,
+        -0.28371919849619787,
+        -0.6776900434147209,
+        -0.39480254270894366,
+        -0.00908148235884442,
+        -0.3347346742998581,
+        0.026958687392273455,
+        0.023316160569007437,
+        0.014741206582411006,
+        -0.010427877928518424
+      ],
+      "features": {
+        "traffic_volume": {
+          "mean": 20425.344779582367,
+          "std": 3012.6185165550005,
+          "min": 15007.0,
+          "max": 28358.0
+        },
+        "average_speed": {
+          "mean": 45.12646289792282,
+          "std": 10.12953332556491,
+          "min": 20.0,
+          "max": 89.79084251025756
+        },
+        "travel_time_index": {
+          "mean": 1.2007152124946334,
+          "std": 0.11847419172097033,
+          "min": 1.0000385482661114,
+          "max": 1.5
+        },
+        "congestion_level": {
+          "mean": 68.15956657344225,
+          "std": 11.597301411938515,
+          "min": 40.96964278949875,
+          "max": 96.09279539602105
+        },
+        "road_capacity_utilization": {
+          "mean": 94.38911568180309,
+          "std": 8.162947150604174,
+          "min": 70.36792942375294,
+          "max": 100.0
+        },
+        "incident_reports": {
+          "mean": 1.1675174013921115,
+          "std": 1.25941693671014,
+          "min": 0.0,
+          "max": 7.0
+        },
+        "environmental_impact": {
+          "mean": 90.85068955916473,
+          "std": 6.025237033110002,
+          "min": 80.014,
+          "max": 106.716
+        },
+        "pedestrian_and_cyclist_count": {
+          "mean": 100.00046403712297,
+          "std": 9.87237499720332,
+          "min": 67.0,
+          "max": 137.0
+        },
+        "isweekend": {
+          "mean": 0.2825986078886311,
+          "std": 0.4503673563973832,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_fog": {
+          "mean": 0.0037122969837587007,
+          "std": 0.06082953953699766,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_overcast": {
+          "mean": 0.1545243619489559,
+          "std": 0.3615345578547251,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_rain": {
+          "mean": 0.09930394431554525,
+          "std": 0.29913908963439556,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_windy": {
+          "mean": 0.05104408352668213,
+          "std": 0.22013875806045957,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "roadwork_and_construction_activity_yes": {
+          "mean": 0.09559164733178654,
+          "std": 0.2940986581552438,
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "traffic_state": "Peak Congestion",
+      "description": "High traffic with moderate congestion",
+      "color": "#f59e0b",
+      "sample_count": 2155,
+      "percentage": 24.115935541629362
+    },
+    {
+      "id": 3,
+      "centroid_scaled": [
+        0.6646976451704844,
+        -0.3740841219141501,
+        0.7495130369144198,
+        0.7108519082004027,
+        0.48067701744896707,
+        0.30860366544043744,
+        0.664697645170484,
+        -0.40008140051418334,
+        -0.0023954605413628364,
+        -0.34672847348275354,
+        0.053811840176306615,
+        0.04181090497044528,
+        0.03637082592200515,
+        0.008459481194021342
+      ],
+      "features": {
+        "traffic_volume": {
+          "mean": 37877.8362346873,
+          "std": 9702.470680166285,
+          "min": 20750.0,
+          "max": 72039.0
+        },
+        "average_speed": {
+          "mean": 35.44224129567817,
+          "std": 9.242166869113484,
+          "min": 20.0,
+          "max": 69.43736062649339
+        },
+        "travel_time_index": {
+          "mean": 1.4994554508874864,
+          "std": 0.009679116309720775,
+          "min": 1.222116049876777,
+          "max": 1.5
+        },
+        "congestion_level": {
+          "mean": 97.5457117818292,
+          "std": 5.196417394630273,
+          "min": 74.39442434137916,
+          "max": 100.0
+        },
+        "road_capacity_utilization": {
+          "mean": 100.0,
+          "std": 0.0,
+          "min": 100.0,
+          "max": 100.0
+        },
+        "incident_reports": {
+          "mean": 2.0085966043412853,
+          "std": 1.426597258111073,
+          "min": 0.0,
+          "max": 10.0
+        },
+        "environmental_impact": {
+          "mean": 125.75567246937462,
+          "std": 19.40494136033257,
+          "min": 91.5,
+          "max": 194.078
+        },
+        "pedestrian_and_cyclist_count": {
+          "mean": 99.80614657210401,
+          "std": 9.832246683808076,
+          "min": 66.0,
+          "max": 141.0
+        },
+        "isweekend": {
+          "mean": 0.2856221792392005,
+          "std": 0.4517587975159787,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_fog": {
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "weather_conditions_overcast": {
+          "mean": 0.16398022781001503,
+          "std": 0.37029742356133777,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_rain": {
+          "mean": 0.10466365785514721,
+          "std": 0.30615244638349703,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "weather_conditions_windy": {
+          "mean": 0.05566301310982162,
+          "std": 0.22929444268346194,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "roadwork_and_construction_activity_yes": {
+          "mean": 0.10122501611863315,
+          "std": 0.3016588621113432,
+          "min": 0.0,
+          "max": 1.0
+        }
+      },
+      "traffic_state": "Incident / Disrupted",
+      "description": "Very high traffic with incidents and disruptions",
+      "color": "#ef4444",
+      "sample_count": 4653,
+      "percentage": 52.07027752909579
+    }
+  ],
+  "signal_timings": {
+    "0": {
+      "green_time": 45,
+      "yellow_time": 3,
+      "cycle_length": 100
+    },
+    "1": {
+      "green_time": 30,
+      "yellow_time": 3,
+      "cycle_length": 75
+    },
+    "2": {
+      "green_time": 35,
+      "yellow_time": 3,
+      "cycle_length": 90
+    },
+    "3": {
+      "green_time": 50,
+      "yellow_time": 3,
+      "cycle_length": 120
+    }
+  },
+  "feature_names": [
+    "traffic_volume",
+    "average_speed",
+    "travel_time_index",
+    "congestion_level",
+    "road_capacity_utilization",
+    "incident_reports",
+    "environmental_impact",
+    "pedestrian_and_cyclist_count",
+    "isweekend",
+    "weather_conditions_fog",
+    "weather_conditions_overcast",
+    "weather_conditions_rain",
+    "weather_conditions_windy",
+    "roadwork_and_construction_activity_yes"
+  ],
+  "scaler_params": {
+    "traffic_volume": {
+      "mean": 29236.04811996419,
+      "std": 13001.80880124022
+    },
+    "average_speed": {
+      "mean": 39.447426957306334,
+      "std": 10.707243504178408
+    },
+    "travel_time_index": {
+      "mean": 1.3755535780105832,
+      "std": 0.16531908064704595
+    },
+    "congestion_level": {
+      "mean": 80.81804073595616,
+      "std": 23.533181668791784
+    },
+    "road_capacity_utilization": {
+      "mean": 92.02921519093537,
+      "std": 16.583340892161335
+    },
+    "incident_reports": {
+      "mean": 1.570389435989257,
+      "std": 1.4200469362090404
+    },
+    "environmental_impact": {
+      "mean": 108.47209623992839,
+      "std": 26.00361760248044
+    },
+    "pedestrian_and_cyclist_count": {
+      "mean": 114.53334825425246,
+      "std": 36.8125730665883
+    },
+    "isweekend": {
+      "mean": 0.2867054610564011,
+      "std": 0.4522480821259784
+    },
+    "weather_conditions_fog": {
+      "mean": 0.10731871083258729,
+      "std": 0.3095353407534061
+    },
+    "weather_conditions_overcast": {
+      "mean": 0.1450313339301701,
+      "std": 0.35215213162527637
+    },
+    "weather_conditions_rain": {
+      "mean": 0.09254700089525515,
+      "std": 0.2898127891296429
+    },
+    "weather_conditions_windy": {
+      "mean": 0.047896150402864816,
+      "std": 0.21355845321824837
+    },
+    "roadwork_and_construction_activity_yes": {
+      "mean": 0.09870188003581021,
+      "std": 0.29827801669644816
+    }
+  }
+}
