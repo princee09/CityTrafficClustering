@@ -37,7 +37,7 @@ ML_traffic/
     └── extractClusterParams.py  # Extracts K-Means parameters for the sim
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Running the Simulation (Frontend)
 The simulation is a static web application. You can run it directly:
